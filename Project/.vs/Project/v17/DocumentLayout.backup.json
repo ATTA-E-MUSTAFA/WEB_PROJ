@@ -1,0 +1,208 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\views\\cartitems\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\views\\cartitems\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\controllers\\cartitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\controllers\\cartitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\models\\repositories\\cartitemsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\models\\repositories\\cartitemsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\models\\interfaces\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\models\\interfaces\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\views\\order\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\views\\order\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|c:\\users\\user\\desktop\\default\\web_identity\\project\\project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5A87C84-CBDD-46A0-A24E-94BD6463ABBA}|Project\\Project.csproj|solutionrelative:project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Models\\Interfaces\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "Project\\Models\\Interfaces\\IAdminRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Models\\Interfaces\\IAdminRepository.cs",
+              "RelativeToolTip": "Project\\Models\\Interfaces\\IAdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T11:54:51.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartItemsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Models\\Repositories\\CartItemsRepository.cs",
+              "RelativeDocumentMoniker": "Project\\Models\\Repositories\\CartItemsRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Models\\Repositories\\CartItemsRepository.cs",
+              "RelativeToolTip": "Project\\Models\\Repositories\\CartItemsRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T23:46:46.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Views\\CartItems\\Create.cshtml",
+              "RelativeDocumentMoniker": "Project\\Views\\CartItems\\Create.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Views\\CartItems\\Create.cshtml",
+              "RelativeToolTip": "Project\\Views\\CartItems\\Create.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAD0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T23:36:44.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Controllers\\CartItemsController.cs",
+              "RelativeDocumentMoniker": "Project\\Controllers\\CartItemsController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Controllers\\CartItemsController.cs",
+              "RelativeToolTip": "Project\\Controllers\\CartItemsController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwEsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T18:45:57.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ScaffoldingReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\ScaffoldingReadMe.txt",
+              "RelativeDocumentMoniker": "Project\\ScaffoldingReadMe.txt",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\ScaffoldingReadMe.txt",
+              "RelativeToolTip": "Project\\ScaffoldingReadMe.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-09-26T06:07:55.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Views\\Order\\Create.cshtml",
+              "RelativeDocumentMoniker": "Project\\Views\\Order\\Create.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Views\\Order\\Create.cshtml",
+              "RelativeToolTip": "Project\\Views\\Order\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-26T12:49:43.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAAGIAAAAAZmZmZmYNwKkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T19:39:39.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Views\\Order\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project\\Views\\Order\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Views\\Order\\Index.cshtml",
+              "RelativeToolTip": "Project\\Views\\Order\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-26T12:50:32.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Project\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAFAAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-25T18:45:07.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Project.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Project.csproj",
+              "RelativeDocumentMoniker": "Project\\Project.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\Project.csproj",
+              "RelativeToolTip": "Project\\Project.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-25T18:01:46.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\appsettings.json",
+              "RelativeDocumentMoniker": "Project\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Desktop\\default\\web_identity\\Project\\Project\\appsettings.json",
+              "RelativeToolTip": "Project\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAADlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-25T17:59:51.206Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

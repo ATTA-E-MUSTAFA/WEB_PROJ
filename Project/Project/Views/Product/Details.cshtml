@@ -1,0 +1,118 @@
+﻿@model Project.Models.Entities.Product
+@{
+    ViewData["Title"] = $"Details {Model.Name}";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .container {
+            margin-bottom: 100px; /* Adjust margin to keep button above the footer */
+        }
+
+        .card {
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            max-width: 400px; /* Adjust the width to fit the design */
+            margin: 0 auto; /* Center the card horizontally */
+        }
+
+            .card img {
+                width: 100%;
+                height: auto;
+                object-fit: cover; /* Ensures the image covers the container without distortion */
+            }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem; /* Adjust the font size as needed */
+            font-weight: bold;
+            color: #ff5722;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #ff5722;
+        }
+
+        .list-group-item {
+            background-color: #444;
+            border: 1px solid #555;
+            color: #e0e0e0;
+        }
+
+        .btn-primary {
+            background-color: #ff5722;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #e64a19;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <img src="@Url.Content($"~/images/{Model.ImageUrl}")" class="img-fluid" alt="@Model.Name">
+            <div class="card-body">
+                <h1 class="card-title">@Model.Name</h1>
+                <p class="card-text">@Model.Description</p>
+                <p class="card-text"><strong>Price:</strong> @Model.Price</p>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <section class="mt-5">
+            <h2 class="section-title">Product Reviews</h2>
+            @if (ViewBag.Reviews != null && ViewBag.Reviews.Count > 0)
+            {
+                <ul class="list-group">
+                    @foreach (var review in ViewBag.Reviews)
+                    {
+                        <li class="list-group-item">
+                            <strong>Rating:</strong> @review.Rating/5<br>
+                            <strong>Comment:</strong> @review.Comment<br>
+                            <strong>Review Date:</strong> @review.ReviewDate.ToString("yyyy-MM-dd")
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No reviews yet. Be the first to leave a review!</p>
+            }
+            <a href="/Product/Review/@Model.Id" class="btn btn-primary mt-3">Leave a Review</a>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

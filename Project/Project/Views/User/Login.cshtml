@@ -1,0 +1,151 @@
+﻿@model Project.Models.Entities.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: #333;
+            padding: 20px;
+            color: #FAF3E0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 0;
+        }
+
+            .form-label,
+            .card h2,
+            .text-center p {
+                color: #fff;
+            }
+
+        .btn-primary {
+            background-color: #f00;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #c00;
+            }
+
+        .form-control {
+            background-color: #444;
+            border: 1px solid #555;
+            color: #fff;
+        }
+
+            .form-control:focus {
+                background-color: #555;
+                color: #fff;
+                border-color: #777;
+            }
+
+        a {
+            color: #f00;
+        }
+
+            a:hover {
+                color: #c00;
+            }
+
+        .btn:disabled {
+            background-color: #555;
+            border-color: #555;
+            cursor: not-allowed;
+        }
+
+        .attached-card {
+            display: flex;
+            border-radius: 0;
+        }
+
+            .attached-card .card:hover {
+                z-index: 10;
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="attached-card">
+                    <!-- Terms and Conditions Card -->
+                    <div class="col-md-6 card">
+                        <h2 class="text-center mb-4">Terms and Conditions</h2>
+                        <div class="mb-3">
+                            <p>Please read and accept the terms and conditions before logging in.</p>
+
+                            <p>1) First of All kat lo tumhare pass time hai abhi! xd</p>
+
+                            <p>2) Donate in the private fund to revive the potential chances of Muzammil's marriage in near or far-stretched future.</p>
+
+                            <p>3) The website is made by Muzammil jo krna krlo TA's xd.</p>
+
+                            <p>4) By accepting the terms and conditions, you are confirming that Muzammil is the most handsome guy in the university.</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="termsCheckbox">
+                                <label class="form-check-label" for="termsCheckbox">
+                                    I accept the <a href="#" target="_blank">terms and conditions</a>.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login Card -->
+                    <div class="col-md-6 card">
+                        <h2 class="text-center mb-4">Login to FashionFusion</h2>
+                        <form id="loginForm" action="/User/Login" method="post">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                            <button type="submit" id="loginButton" class="btn btn-primary w-100" disabled>Login</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Don't have an account? <a href="/User/SignUp">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const termsCheckbox = document.getElementById('termsCheckbox');
+        const loginButton = document.getElementById('loginButton');
+
+        termsCheckbox.addEventListener('change', function () {
+            loginButton.disabled = !this.checked;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/Project.styles.css" />
+    <style>
+        .navbar-brand, .nav-link {
+            color: #000;
+        }
+
+            .navbar-brand:hover, .nav-link:hover {
+                color: #c00;
+            }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+            .footer a {
+                color: #fff;
+            }
+
+                .footer a:hover {
+                    color: #c00;
+                }
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        <br />
+        <br />
+    </div>
+
+    
+        <footer class="footer text-center">
+            
+            <div class="container">
+                <p>&copy; 2024 FashionFusion. All rights reserved.</p>
+            </div>
+        </footer>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

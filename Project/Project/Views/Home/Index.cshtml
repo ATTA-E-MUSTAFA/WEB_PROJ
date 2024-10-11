@@ -1,0 +1,336 @@
+﻿@{
+    ViewData["Title"] = "Discover Stores";
+    var isLoggedIn = ViewData["IsLoggedIn"] as bool? ?? false;
+    var username = ViewData["Username"] as string ?? string.Empty;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .navbar, .footer {
+            background-color: #333;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff;
+        }
+
+            .navbar-brand:hover, .nav-link:hover {
+                color: #c00;
+            }
+
+        .btn-primary {
+            background-color: #f00;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #c00;
+            }
+
+        .btn {
+            background-color: #f00; /* Default button color */
+            border: none;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+            .btn:hover {
+                background-color: #c00; /* Button hover color */
+                color: #fff;
+            }
+
+        .btn-outline-light {
+            border-color: #f00;
+            color: #fff;
+        }
+
+            .btn-outline-light:hover {
+                background-color: #f00;
+                border-color: #f00;
+                color: #fff;
+            }
+
+        .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #fff;
+        }
+
+            .dropdown-item:hover {
+                background-color: #f00;
+                color: #fff;
+            }
+
+        .card {
+            background-color: rgba(34, 34, 34, 0.9);
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden; /* Ensures the circle stays within the card */
+        }
+
+            .card::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+                pointer-events: none;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+            }
+
+            
+
+            .card:hover::after {
+                opacity: 1;
+                width: 200%;
+                height: 200%;
+            }
+
+        .card-title, .card-text, .card-footer, .footer a {
+            color: #fff;
+        }
+
+        .footer {
+            padding: 20px 0;
+        }
+
+            .footer a:hover {
+                color: #c00;
+            }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .banner-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px; /* Set the height for centering */
+            overflow: hidden;
+            margin: 0 auto; /* Center the wrapper itself */
+        }
+
+        .banner-image {
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .card-img-top {
+            width: 350px; /* Set the width */
+            height: 235px; /* Set the height */
+            object-fit: cover; /* Ensures the image covers the area without stretching */
+            border-radius: 5px; /* Optional: rounded corners */
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="container-fluid bg-dark text-center py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="display-5">DISCOVER STORES</h1>
+            <div>
+                 @if (!User.Identity.IsAuthenticated)
+                 {
+                    <!-- Buyer and Seller buttons -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-light dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false">
+                            Buyer
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="~/Identity/Account/Login">Login</a></li>
+                            <li><a class="dropdown-item" href="~/Identity/Account/Register">Sign Up</a></li>
+                        </ul>
+
+                        <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Seller
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Admin/Login">Login</a></li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <span class="text-light">Welcome, @username!</span>
+                    <a href="@(username == "Admin" ? "/Admin/Logout" : "/Identity/Account/Logout")" class="btn btn-danger ms-2">Logout</a>
+                }
+            </div>
+        </div>
+        <div class="banner-wrapper mt-4">
+            <img id="bannerImage" src="~/images/banner2.jpg" class="banner-image img-fluid" alt="Store Banner">
+        </div>
+
+        <div class="input-group my-4 w-50 mx-auto">
+            <input type="text" class="form-control" placeholder="Search for stores...">
+            <a class="btn btn-danger" href="/Home/Search/">Search</a>
+        </div>
+    </header>
+
+    <!-- New Arrivals Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+
+            <div class="row">
+                <!-- New arrivals items -->
+                <!-- Example item -->
+                <div class="col-md-4">
+                    <a href="/User/Login" class="card-link" style="border:none">
+                        <div class="card mb-4">
+                            <img src="~/images/p1.jpeg" class="card-img-top" alt="Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Long Coat</h5>
+                                <p class="card-text">High Quality wool Coat.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small>$99.99</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/User/Login" class="card-link">
+                        <div class="card mb-4">
+                            <img src="~/images/p1.jpeg" class="card-img-top" alt="Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Long Coat</h5>
+                                <p class="card-text">High Quality wool Coat.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small>$99.99</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/User/Login" class="card-link">
+                        <div class="card mb-4">
+                            <img src="~/images/p1.jpeg" class="card-img-top" alt="Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Long Coat</h5>
+                                <p class="card-text">High Quality wool Coat.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small>$99.99</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Picks Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Hot Picks</h2>
+            <div class="row">
+                <!-- Hot picks items -->
+                <!-- Example item -->
+                <div class="col-md-4">
+                    <a href="/User/Login" class="card-link">
+                        <div class="card mb-4">
+                            <img src="~/images/p2.webp" class="card-img-top" alt="Product 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Brief description of the product.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small>$99.99</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/User/Login" class="card-link">
+                        <div class="card mb-4">
+                            <img src="~/images/p2.webp" class="card-img-top" alt="Product 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Brief description of the product.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small>$99.99</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/User/Login" class="card-link">
+                        <div class="card mb-4">
+                            <img src="~/images/p2.webp" class="card-img-top" alt="Product 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Brief description of the product.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small>$99.99</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <script>
+        const images = [
+            '@Url.Content("~/images/banner2.jpg")',
+            '@Url.Content("~/images/banner1.jpg")',
+            '@Url.Content("~/images/banner.webp")',
+            '@Url.Content("~/images/banner3.jpg")',
+            '@Url.Content("~/images/banner4.jpg")'
+        ];
+        let currentImageIndex = 0;
+        const bannerImage = document.getElementById('bannerImage');
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            bannerImage.src = images[currentImageIndex];
+        }
+
+        setInterval(changeImage, 1500); // Change image every 2 seconds
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

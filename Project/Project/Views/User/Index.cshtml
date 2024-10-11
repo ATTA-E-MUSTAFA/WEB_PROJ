@@ -1,0 +1,281 @@
+﻿@model Project.Models.Entities.User
+@using System.Security.Claims
+
+
+@{
+    ViewData["Title"] = "User Home";
+    var isLoggedIn = ViewData["IsLoggedIn"] as bool? ?? false;
+    var username = ViewData["Username"] as string ?? string.Empty;
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Unique Clothing for Pets</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .navbar, .footer {
+            background-color: #333;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff;
+        }
+
+            .navbar-brand:hover, .nav-link:hover {
+                color: #c00;
+            }
+
+        .btn-primary {
+            background-color: #f00;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #c00;
+            }
+
+        .btn {
+            background-color: #f00; /* Default button color */
+            border: none;
+            color: #fff;
+        }
+
+            .btn:hover {
+                background-color: #c00; /* Button hover color */
+                color: #fff;
+            }
+
+        .btn-outline-light {
+            border-color: #f00;
+            color: #fff;
+        }
+
+            .btn-outline-light:hover {
+                background-color: #f00;
+                border-color: #f00;
+                color: #fff;
+            }
+
+        .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #fff;
+        }
+
+            .dropdown-item:hover {
+                background-color: #f00;
+                color: #fff;
+            }
+
+        .card {
+            background-color: rgba(34, 34, 34, 0.9);
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+            }
+
+            .card::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+                pointer-events: none;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+            }
+
+            .card:hover::after {
+                opacity: 1;
+                width: 200%;
+                height: 200%;
+            }
+        .footer {
+            padding: 20px 0;
+        }
+
+            .footer a:hover {
+                color: #c00;
+            }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .banner-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px; /* Set the height for centering */
+            overflow: hidden;
+            margin: 0 auto; /* Center the wrapper itself */
+        }
+
+        .banner-image {
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .card-img-top {
+            width: 350px; /* Set the width */
+            height: 235px; /* Set the height */
+            object-fit: cover; /* Ensures the image covers the area without stretching */
+            border-radius: 5px; /* Optional: rounded corners */
+        }
+
+        .categories {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+            .categories .btn-category {
+                margin: 10px;
+                color: #fff;
+                background-color: #333;
+                border-color: #f00;
+            }
+
+                .categories .btn-category:hover {
+                    color: #fff;
+                    background-color: #f00;
+                }
+    </style>
+</head>
+
+<body>
+    <header class="container-fluid bg-dark text-center py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="display-5">Welcome, @username</h1>
+            <div>
+                @if (!isLoggedIn)
+                {
+                    <a href="/User/Login" class="btn btn-outline-light me-2">Login</a>
+                    <a href="/User/SignUp" class="btn btn-danger">Sign Up</a>
+                }
+                else
+                {
+                    <a href="/User/Logout" class="btn btn-danger ms-2">Logout</a>
+                }
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Fashion Fusion</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Order/Index">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Product/Index2">Product</a>
+                    </li>
+                    <li class="nav-item">
+                         <a href="/CartItems/Index/@userId" class="nav-link">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1>Discover unique clothing stores for your furry friends</h1>
+            <form class="d-flex justify-content-center mt-4">
+                <input class="form-control me-2 w-50" type="search" placeholder="Search for stores" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+    <section class="categories py-5">
+        <div class="container">
+            <h2 class="section-title">Shop by Categories</h2>
+            <div class="row">
+                <!-- Kids Category -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="~/images/kidsec.webp" class="card-img-top" alt="Kids Category">
+                        <div class="card-body">
+                            <h5 class="card-title">Kids</h5>
+                            <p class="card-text">Explore trendy and comfy clothing for kids.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="/Product/Index2" class="btn btn-primary">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Men Category -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="~/images/mensec.webp" class="card-img-top" alt="Men Category">
+                        <div class="card-body">
+                            <h5 class="card-title">Men</h5>
+                            <p class="card-text">Check out the latest fashion trends for men.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="/Product/Index2" class="btn btn-primary">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Women Category -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="~/images/womensec.webp" class="card-img-top" alt="Women Category">
+                        <div class="card-body">
+                            <h5 class="card-title">Women</h5>
+                            <p class="card-text">Discover the latest styles for women.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="/Product/Index2" class="btn btn-primary">View Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

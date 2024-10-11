@@ -1,0 +1,108 @@
+﻿@model Project.Models.Entities.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #444;
+            border: 1px solid #555;
+        }
+
+        .card-title {
+            color: #fff;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="container-fluid bg-dark text-center py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="display-5">Create Product</h1>
+        </div>
+    </header>
+
+    <!-- Create Product Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="post" action="/Product/Create" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="productName" placeholder="Enter product name" name="Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="productDescription" rows="3" placeholder="Enter product description" name="Description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Price</label>
+                            <input type="number" step="0.01" class="form-control" id="productPrice" placeholder="Enter product price" name="Price">
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label for="categoryId" class="form-label">Category ID</label>
+                            <input type="number" class="form-control" id="categoryId" placeholder="Enter category ID" name="CategoryId">
+                        </div>
+                        <label for="productImage" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" id="productForm"name="ImageUrl">
+
+
+                        <button type="submit" class="btn btn-primary" onclick="uploadFiles()">Create Product</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function uploadFiles() {
+            var input = document.getElementById("postedFiles"); get file input id
+            var files = input.files; get files
+            var formData = new FormData(); create form
+
+            for (var i = 0; i != files.length; i++) {
+                formData.append("files", files[i]); loop through all files and append
+            }
+
+            $.ajax(
+                {
+                    url: "/Home/AjaxUpload",
+                    data: formData, send it as formData
+                    processData: false,tell jQuery not to process the data
+                    contentType: false,tell jQuery not to set contentType
+                    type: "POST", type is post as we will need to post files
+                    success: function (data) {
+                        alert("Files Uploaded!" + data);
+                    }
+                }
+            );
+        }
+      
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿ @model Project.Models.Entities.CartItems
+ @using System.Security.Claims
+
+ @{
+
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+ }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #444;
+            border: 1px solid #555;
+        }
+
+        .card-title, .card-footer {
+            color: #fff;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="container-fluid bg-dark text-center py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="display-5">Add to Cart</h1>
+        </div>
+    </header>
+
+    <!-- Add to Cart Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Add Product to Cart</h2>
+            <form asp-controller="CartItems" asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label for="productId" class="form-label">Select Product</label>
+                    <select class="form-select" id="productId" name="ProductId" required>
+                        <option value="" selected disabled>Select a product</option>
+                        @foreach (var product in ViewBag.Products)
+                        {
+                            <option value="@product.Id">@product.Name - $@product.Price</option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" name="Quantity" required>
+                </div>
+                <input type="hidden" name="UserId" value="@userId" />
+                <h1>@userId</h1>
+                <button type="submit" class="btn btn-danger">Add to Cart</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
